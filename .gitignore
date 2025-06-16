@@ -13,3 +13,5 @@
 # Ignore public icons
 /public/*.png
 /public/*.ico
+
+/config/master.key

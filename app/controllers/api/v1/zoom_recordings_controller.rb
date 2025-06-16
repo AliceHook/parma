@@ -12,7 +12,7 @@ module Api
         end
 
         begin
-          n8n_url = ENV.fetch('N8N_WEBHOOK_URL')
+          n8n_url = Rails.application.credentials.n8n_webhook_url
           response = Faraday.post(n8n_url, { zoom_url: zoom_url })
           Rails.logger.info("Sent to n8n: #{zoom_url} | Response status: #{response.status}")
         rescue => e
